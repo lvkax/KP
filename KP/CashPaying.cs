@@ -35,13 +35,19 @@ namespace KP
 
         private void CashPaying_Load(object sender, EventArgs e)
         {
-            if (tbGived.Text != null)
+            tbCashPaying.Text = "3000";
+        }
+
+        private void tbGived_TextChanged(object sender, EventArgs e) 
+        {
+            if (tbGived.Text != string.Empty)
             {
                 double topay = Double.Parse(tbCashPaying.Text);
                 double gived = Double.Parse(tbGived.Text);
                 double rest = gived - topay;
-                tbRest.Text = rest.ToString();
+                tbRest.Text = rest.ToString() + "  ₴";
             }
+            
         }
     }
 }
