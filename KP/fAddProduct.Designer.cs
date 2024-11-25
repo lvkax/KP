@@ -39,7 +39,8 @@
             this.tbAddName = new System.Windows.Forms.TextBox();
             this.tbAddCost = new System.Windows.Forms.TextBox();
             this.tbAddWorP = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbUnit = new System.Windows.Forms.ComboBox();
+            this.lbRecomended = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnNewProductCancel
@@ -50,6 +51,7 @@
             this.btnNewProductCancel.TabIndex = 0;
             this.btnNewProductCancel.Text = "Відмінити";
             this.btnNewProductCancel.UseVisualStyleBackColor = true;
+            this.btnNewProductCancel.Click += new System.EventHandler(this.btnNewProductCancel_Click);
             // 
             // btnNewProduct
             // 
@@ -96,7 +98,6 @@
             this.lbAddUnit.Size = new System.Drawing.Size(58, 13);
             this.lbAddUnit.TabIndex = 6;
             this.lbAddUnit.Text = "Од.Виміру";
-            this.lbAddUnit.Click += new System.EventHandler(this.label5_Click);
             // 
             // lbWorP
             // 
@@ -106,51 +107,61 @@
             this.lbWorP.Size = new System.Drawing.Size(28, 13);
             this.lbWorP.TabIndex = 7;
             this.lbWorP.Text = "-------";
-            this.lbWorP.Click += new System.EventHandler(this.lbWorP_Click);
             // 
             // tbAddID
             // 
-            this.tbAddID.Location = new System.Drawing.Point(97, 6);
+            this.tbAddID.Location = new System.Drawing.Point(114, 6);
             this.tbAddID.Name = "tbAddID";
             this.tbAddID.Size = new System.Drawing.Size(100, 20);
             this.tbAddID.TabIndex = 8;
+            this.tbAddID.TextChanged += new System.EventHandler(this.tbAddID_TextChanged);
             // 
             // tbAddName
             // 
-            this.tbAddName.Location = new System.Drawing.Point(97, 36);
+            this.tbAddName.Location = new System.Drawing.Point(114, 36);
             this.tbAddName.Name = "tbAddName";
             this.tbAddName.Size = new System.Drawing.Size(100, 20);
             this.tbAddName.TabIndex = 9;
             // 
             // tbAddCost
             // 
-            this.tbAddCost.Location = new System.Drawing.Point(97, 72);
+            this.tbAddCost.Location = new System.Drawing.Point(114, 72);
             this.tbAddCost.Name = "tbAddCost";
             this.tbAddCost.Size = new System.Drawing.Size(100, 20);
             this.tbAddCost.TabIndex = 10;
             // 
             // tbAddWorP
             // 
-            this.tbAddWorP.Location = new System.Drawing.Point(97, 145);
+            this.tbAddWorP.Location = new System.Drawing.Point(114, 145);
             this.tbAddWorP.Name = "tbAddWorP";
             this.tbAddWorP.Size = new System.Drawing.Size(100, 20);
             this.tbAddWorP.TabIndex = 12;
-            this.tbAddWorP.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // comboBox1
+            // cbUnit
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(97, 108);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 13;
+            this.cbUnit.FormattingEnabled = true;
+            this.cbUnit.Location = new System.Drawing.Point(114, 108);
+            this.cbUnit.Name = "cbUnit";
+            this.cbUnit.Size = new System.Drawing.Size(100, 21);
+            this.cbUnit.TabIndex = 13;
+            this.cbUnit.SelectedIndexChanged += new System.EventHandler(this.cbUnit_SelectedIndexChanged);
+            // 
+            // lbRecomended
+            // 
+            this.lbRecomended.AutoSize = true;
+            this.lbRecomended.Location = new System.Drawing.Point(220, 9);
+            this.lbRecomended.Name = "lbRecomended";
+            this.lbRecomended.Size = new System.Drawing.Size(88, 13);
+            this.lbRecomended.TabIndex = 14;
+            this.lbRecomended.Text = "Рекомендовано";
             // 
             // fAddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(478, 223);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.lbRecomended);
+            this.Controls.Add(this.cbUnit);
             this.Controls.Add(this.tbAddWorP);
             this.Controls.Add(this.tbAddCost);
             this.Controls.Add(this.tbAddName);
@@ -164,6 +175,7 @@
             this.Controls.Add(this.btnNewProductCancel);
             this.Name = "fAddProduct";
             this.Text = "Додати новий продукт";
+            this.Load += new System.EventHandler(this.fAddProduct_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,6 +194,7 @@
         private System.Windows.Forms.TextBox tbAddName;
         private System.Windows.Forms.TextBox tbAddCost;
         private System.Windows.Forms.TextBox tbAddWorP;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbUnit;
+        private System.Windows.Forms.Label lbRecomended;
     }
 }

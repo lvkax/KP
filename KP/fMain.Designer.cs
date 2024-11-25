@@ -38,7 +38,6 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.lbPaying = new System.Windows.Forms.Label();
             this.gvCheck = new System.Windows.Forms.DataGridView();
-            this.btnEdit = new System.Windows.Forms.ToolStripButton();
             this.tbID = new System.Windows.Forms.TextBox();
             this.tb = new System.Windows.Forms.TextBox();
             this.tbAmount = new System.Windows.Forms.TextBox();
@@ -48,6 +47,8 @@
             this.btnCashPaying = new System.Windows.Forms.Button();
             this.bindSrCheck = new System.Windows.Forms.BindingSource(this.components);
             this.bindSrAvailable = new System.Windows.Forms.BindingSource(this.components);
+            this.btnExit = new System.Windows.Forms.ToolStripButton();
+            this.btnDiscount = new System.Windows.Forms.Button();
             this.tsMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindSrCheck)).BeginInit();
@@ -59,7 +60,7 @@
             this.tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnProducts,
             this.toolStripSeparator1,
-            this.btnEdit});
+            this.btnExit});
             this.tsMain.Location = new System.Drawing.Point(0, 0);
             this.tsMain.Name = "tsMain";
             this.tsMain.Size = new System.Drawing.Size(734, 25);
@@ -91,6 +92,7 @@
             // lbBag
             // 
             this.lbBag.AutoSize = true;
+            this.lbBag.BackColor = System.Drawing.Color.Gold;
             this.lbBag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbBag.Location = new System.Drawing.Point(299, 28);
             this.lbBag.Name = "lbBag";
@@ -133,15 +135,6 @@
             this.gvCheck.ReadOnly = true;
             this.gvCheck.Size = new System.Drawing.Size(420, 305);
             this.gvCheck.TabIndex = 6;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(23, 22);
-            this.btnEdit.Text = "Змінити ";
             // 
             // tbID
             // 
@@ -205,12 +198,35 @@
             this.btnCashPaying.UseVisualStyleBackColor = false;
             this.btnCashPaying.Click += new System.EventHandler(this.btnCashPaying_Click);
             // 
+            // btnExit
+            // 
+            this.btnExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(23, 22);
+            this.btnExit.Text = "Завершити зміну";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnDiscount
+            // 
+            this.btnDiscount.BackColor = System.Drawing.Color.GreenYellow;
+            this.btnDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDiscount.Location = new System.Drawing.Point(134, 163);
+            this.btnDiscount.Name = "btnDiscount";
+            this.btnDiscount.Size = new System.Drawing.Size(133, 23);
+            this.btnDiscount.TabIndex = 14;
+            this.btnDiscount.Text = "Додати знижку";
+            this.btnDiscount.UseVisualStyleBackColor = false;
+            this.btnDiscount.Click += new System.EventHandler(this.btnDiscount_Click);
+            // 
             // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(734, 431);
+            this.Controls.Add(this.btnDiscount);
             this.Controls.Add(this.btnCashPaying);
             this.Controls.Add(this.btnAddtoCheck);
             this.Controls.Add(this.lbAmount);
@@ -223,6 +239,7 @@
             this.Controls.Add(this.lbBag);
             this.Controls.Add(this.btnCardPaying);
             this.Controls.Add(this.tsMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Магазин";
@@ -249,7 +266,6 @@
         private System.Windows.Forms.DataGridView gvCheck;
         private System.Windows.Forms.BindingSource bindSrCheck;
         private System.Windows.Forms.BindingSource bindSrAvailable;
-        private System.Windows.Forms.ToolStripButton btnEdit;
         private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.TextBox tb;
         private System.Windows.Forms.TextBox tbAmount;
@@ -257,6 +273,8 @@
         private System.Windows.Forms.Label lbAmount;
         private System.Windows.Forms.Button btnAddtoCheck;
         private System.Windows.Forms.Button btnCashPaying;
+        private System.Windows.Forms.ToolStripButton btnExit;
+        private System.Windows.Forms.Button btnDiscount;
     }
 }
 

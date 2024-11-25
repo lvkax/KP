@@ -24,7 +24,10 @@ namespace KP
 
         private void fMain_Load(object sender, EventArgs e)
         {
+            gvCheck.AutoGenerateColumns = false;
 
+            DataGridViewColumn column = new DataGridViewTextBoxColumn();
+           
         }
 
         private void btnProducts_Click(object sender, EventArgs e)
@@ -41,6 +44,20 @@ namespace KP
         {
             CashPaying cap = new CashPaying();
             cap.ShowDialog();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Закрити застосунок?", "Вихід з програми", MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnDiscount_Click(object sender, EventArgs e)
+        {
+                       
         }
     }
 }

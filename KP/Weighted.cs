@@ -8,23 +8,28 @@ namespace KP
 {
     public class Weighted : Product
     {
-        public double WeightPerUnit { get; set; }
+        public double CostPerAmountOfUnits { get; set; }
 
-        public Weighted(string id, string name, double cost, int amount, DateTime lastDelivery, double costPer100gram, double weightPerUnit )
+        public Weighted(string id, string name, double cost, int amount, DateTime lastDelivery, double costPer100gram, double costPerAmountOfUnits )
             : base(id, name, cost, amount, lastDelivery )
         {
 
-            WeightPerUnit = weightPerUnit;
+            CostPerAmountOfUnits = costPerAmountOfUnits;
         }
 
         public override string GetUnit()
         {
-            return "грам";
+            return "Грам";
+        }
+
+        public override double CalculateTotalValue()
+        {
+            return Cost / CostPerAmountOfUnits * Amount;
         }
 
         public override bool NeedsDiscount(DateTime currentDate)
         {
-            return base.NeedsDiscount(currentDate) && WeightPerUnit > 5000;  // Уцінка, якщо продукт великий за вагою
+            return base.NeedsDiscount(currentDate) && CostPerAmountOfUnits > 1000;  // Уцінка, якщо продукт великий за вагою
         }
     }
 }

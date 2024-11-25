@@ -18,7 +18,12 @@ namespace KP
 
         public override string GetUnit()
         {
-            return "шт";
+            return "Шт.";
+        }
+
+        public override double CalculateTotalValue()
+        {
+            return Cost * Amount;
         }
 
         public override bool NeedsDiscount(DateTime currentDate)

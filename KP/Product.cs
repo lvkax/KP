@@ -30,10 +30,8 @@ namespace KP
         public abstract string GetUnit();
 
         // Метод для розрахунку загальної вартості
-        public double CalculateTotalValue()
-        {
-            return Cost * Amount;
-        }
+        public abstract double CalculateTotalValue();
+
         
         // Перевірка на уцінку
         public virtual bool NeedsDiscount(DateTime currentDate)

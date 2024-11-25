@@ -28,5 +28,55 @@ namespace KP
             fAddProduct fa = new fAddProduct();
             fa.ShowDialog();
         }
+
+        private void btnStoreOK_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+        }
+
+        private void fProductsInStock_Load(object sender, EventArgs e)
+        {
+            gvStore.AutoGenerateColumns = false;
+
+            DataGridViewColumn column = new DataGridViewTextBoxColumn();
+            column.DataPropertyName = "Id";
+            column.Name = "ID";
+            gvStore.Columns.Add(column);
+
+            column = new DataGridViewTextBoxColumn();
+            column.DataPropertyName = "Name";
+            column.Name = "Ім'я";
+            gvStore.Columns.Add(column);
+
+            column = new DataGridViewTextBoxColumn();
+            column.DataPropertyName = "Amount";
+            column.Name = "Кількість";
+            gvStore.Columns.Add(column);
+
+            column = new DataGridViewTextBoxColumn();
+            column.DataPropertyName = "Cost";
+            column.Name = "Ціна";
+            gvStore.Columns.Add(column);
+
+            column = new DataGridViewTextBoxColumn();
+            column.DataPropertyName = "CostPerAmountOfUnits";
+            column.Name = "За кількіть грам";
+            gvStore.Columns.Add(column);
+
+            column = new DataGridViewTextBoxColumn();
+            column.DataPropertyName = "Unit";
+            column.Name = "Од.виміру";
+            gvStore.Columns.Add(column);
+
+            column = new DataGridViewTextBoxColumn();
+            column.DataPropertyName = "LastDelivery";
+            column.Name = "Остання поставка";
+            gvStore.Columns.Add(column);
+
+            column = new DataGridViewTextBoxColumn();
+            column.DataPropertyName = "TotalCost";
+            column.Name = "Загальна ціна";
+            gvStore.Columns.Add(column);
+        }
     }
 }

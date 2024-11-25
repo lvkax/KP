@@ -17,14 +17,14 @@ namespace KP
             InitializeComponent();
         }
 
-        private void btnCardNo_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-        }
-
         private void btnCardYes_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCardNo_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
         }
 
         private void btnCardCancel_Click(object sender, EventArgs e)
