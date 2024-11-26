@@ -13,6 +13,7 @@ namespace KP
 {
     public partial class fProductsInStock : Form
     {
+
         public fProductsInStock()
         {
             InitializeComponent();

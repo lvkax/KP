@@ -24,7 +24,7 @@ namespace KP
 
         private void btnNewProductOK_Click(object sender, EventArgs e)
         {
-            if(TheProduct is Packed packed)
+            if (TheProduct is Packed packed)
             {
                 TheProduct.ID = tbAddID.Text;
                 TheProduct.Name = tbAddName.Text;
@@ -44,7 +44,15 @@ namespace KP
                 TheProduct.LastDelivery = new DateTime();
                 weighted.CostPerAmountOfUnits = int.Parse(tbAddWorP.Text);
             }
+            else 
+            {
+                DialogResult = DialogResult.Cancel;
+                MessageBox.Show("Продукт порожній інстанс!", "Помилка");
+            }
+
+
             DialogResult = DialogResult.OK;
+            
             
         }
 

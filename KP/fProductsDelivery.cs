@@ -12,6 +12,7 @@ namespace KP
 {
     public partial class fProductsDelivery : Form
     {
+     
         public fProductsDelivery()
         {
             InitializeComponent();
@@ -46,22 +47,24 @@ namespace KP
         private void btnAddNewWeighted_Click(object sender, EventArgs e)
         {
             Product product = new Weighted();
-    fAddProduct fa = new fAddProduct(product);
-    if (fa.ShowDialog() == DialogResult.OK)
-    {
-        // Додавання продукту через BindingSource
-        bindSrDelivery.Add(product);
-    }
+            using (fAddProduct fa = new fAddProduct(product))
+            {
+                if (fa.ShowDialog() == DialogResult.OK)
+                {
+                    bindSrDelivery.Add(product);
+                }
+            }
         }
 
         private void btnAddNewPacked_Click(object sender, EventArgs e)
         {
             Product product = new Packed();
-            fAddProduct fa = new fAddProduct(product);
-            if (fa.ShowDialog() == DialogResult.OK)
+            using (fAddProduct fa = new fAddProduct(product))
             {
-                // Додавання продукту через BindingSource
-                bindSrDelivery.Add(product);
+                if (fa.ShowDialog() == DialogResult.OK)
+                {
+                    bindSrDelivery.Add(product);
+                }
             }
         }
     }
