@@ -15,6 +15,34 @@ namespace KP
         public fProductsDelivery()
         {
             InitializeComponent();
+
+        }
+
+       
+        private void fProductsDelivery_Load(object sender, EventArgs e)
+        {
+
+            gvDelivery.DataSource = bindSrDelivery;
+
+            gvDelivery.AutoGenerateColumns = false;
+
+            DataGridViewColumn column = new DataGridViewTextBoxColumn();
+            column.DataPropertyName = "Id";
+            column.Name = "ID";
+            gvDelivery.Columns.Add(column);
+
+            column = new DataGridViewTextBoxColumn();
+            column.DataPropertyName = "Name";
+            column.Name = "Ім'я";
+            gvDelivery.Columns.Add(column);
+
+            column = new DataGridViewTextBoxColumn();
+            column.DataPropertyName = "Amount";
+            column.Name = "Кількість";
+            gvDelivery.Columns.Add(column);
+
+            
+
         }
     }
 }

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,12 +22,6 @@ namespace KP
         {
             fProductsDelivery fd = new fProductsDelivery();
             fd.ShowDialog();
-        }
-
-        private void btnAddNewProduct_Click(object sender, EventArgs e)
-        {
-            fAddProduct fa = new fAddProduct();
-            fa.ShowDialog();
         }
 
         private void btnStoreOK_Click(object sender, EventArgs e)
@@ -77,6 +72,21 @@ namespace KP
             column.DataPropertyName = "TotalCost";
             column.Name = "Загальна ціна";
             gvStore.Columns.Add(column);
+        }
+
+        
+        private void btnAddNewWeighted_Click(object sender, EventArgs e)
+        {
+            Product product = new Weighted();
+            fAddProduct fa = new fAddProduct(product);
+            fa.ShowDialog();
+        }
+
+        private void btnAddNewPacked_Click(object sender, EventArgs e)
+        {
+            Product product = new Packed();
+            fAddProduct fa = new fAddProduct(product);
+            fa.ShowDialog();
         }
     }
 }

@@ -8,13 +8,16 @@ namespace KP
 {
     public class Packed : Product
     {
-       public int PackSize { get; set; } //Розмір упаковки
+       public string PackSize { get; set; } //Розмір упаковки
 
-        public Packed(string id, string name, double cost, int amount, DateTime lastDelivery, int packSize)
-            :base(id, name, cost, amount , lastDelivery )
+        public Packed(string id, string name, double cost,double price, int amount, DateTime lastDelivery, string packSize)
+            :base(id, name, cost,price, amount , lastDelivery )
         {
             PackSize = packSize;
         }
+
+        public Packed()
+        { }
 
         public override string GetUnit()
         {

@@ -10,21 +10,24 @@ namespace KP
     public abstract class Product
     {
         //Властивості
-        protected string ID { get; set; }
-        protected string Name { get; set; }
-        protected double Cost { get; set; }
-        protected int Amount { get; set; } 
-        protected DateTime LastDelivery { get; set; }
+        public string ID { get; set; }
+        public string Name { get; set; }
+        public double Cost { get; set; }
+        public double Price { get; set; }
+        public int Amount { get; set; } 
+        public DateTime LastDelivery { get; set; }
 
         //Конструктор
-        public Product(string id, string name, double cost, int amount, DateTime lastDelivery)
+        public Product(string id, string name, double cost,double price, int amount, DateTime lastDelivery)
         {
             ID = id;
             Name = name;
             Cost = cost;
+            Price = price;
             Amount = amount;
             LastDelivery = lastDelivery;
         }
+        public Product() { }
         
         // Абстрактний метод для отримання одиниці виміру
         public abstract string GetUnit();

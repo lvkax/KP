@@ -10,12 +10,14 @@ namespace KP
     {
         public double CostPerAmountOfUnits { get; set; }
 
-        public Weighted(string id, string name, double cost, int amount, DateTime lastDelivery, double costPer100gram, double costPerAmountOfUnits )
-            : base(id, name, cost, amount, lastDelivery )
+        public Weighted(string id, string name, double cost, double price, int amount, DateTime lastDelivery, double costPer100gram, double costPerAmountOfUnits )
+            : base(id, name, cost, price, amount, lastDelivery )
         {
 
             CostPerAmountOfUnits = costPerAmountOfUnits;
         }
+
+        public Weighted() { }
 
         public override string GetUnit()
         {

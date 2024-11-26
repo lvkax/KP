@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,16 +12,39 @@ namespace KP
 {
     public partial class fAddProduct : Form
     {
-        public fAddProduct()
+        private Product TheProduct;
+        public fAddProduct(Product p)
         {
+            TheProduct = p;
             InitializeComponent();
         }
+        
 
         int recID = 0;
 
         private void btnNewProductOK_Click(object sender, EventArgs e)
         {
-
+            if(TheProduct is Packed packed)
+            {
+                TheProduct.ID = tbAddID.Text;
+                TheProduct.Name = tbAddName.Text;
+                TheProduct.Cost = Double.Parse(tbAddCost.Text);
+                TheProduct.Price = Double.Parse(tbAddCost.Text);
+                TheProduct.Amount = 0;
+                TheProduct.LastDelivery = new DateTime();
+                packed.PackSize = tbAddWorP.Text;
+            }
+            else if (TheProduct is Weighted weighted)
+            {
+                TheProduct.ID = tbAddID.Text;
+                TheProduct.Name = tbAddName.Text;
+                TheProduct.Cost = Double.Parse(tbAddCost.Text);
+                TheProduct.Price = Double.Parse(tbAddCost.Text);
+                TheProduct.Amount = 0;
+                TheProduct.LastDelivery = new DateTime();
+                weighted.CostPerAmountOfUnits = int.Parse(tbAddWorP.Text);
+            }
+            DialogResult = DialogResult.OK;
         }
 
         private void btnNewProductCancel_Click(object sender, EventArgs e)
@@ -30,11 +53,14 @@ namespace KP
         }
         private void fAddProduct_Load(object sender, EventArgs e)
         {
-            
             tbAddID.Text = recID.ToString();
-            cbUnit.Items.Add("Шт.");
-            cbUnit.Items.Add("Грам");
-            
+            if (TheProduct != null)
+            {
+                tbAddID.Text = TheProduct.ID;
+                tbAddName.Text = TheProduct.Name;
+                tbAddCost.Text = TheProduct.Cost.ToString();
+                tbAddPrice.Text = TheProduct.Price.ToString();
+            }
         }
 
         private void tbAddID_TextChanged(object sender, EventArgs e)
@@ -46,18 +72,6 @@ namespace KP
             else
             {
                 lbRecomended.Visible = true;
-            }
-        }
-
-        private void cbUnit_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbUnit.SelectedIndex == 0) 
-            { 
-                lbWorP.Text = "Розмір упаковки";
-            }
-            else if (cbUnit.SelectedIndex == 1)
-            {
-                lbWorP.Text = "За вагу";
             }
         }
     }
