@@ -35,10 +35,6 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnDelivery = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnAddNewWeighted = new System.Windows.Forms.ToolStripButton();
-            this.btnAddNewPacked = new System.Windows.Forms.ToolStripButton();
-            this.btnEdit = new System.Windows.Forms.ToolStripButton();
-            this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.btnStoreOK = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnSave = new System.Windows.Forms.ToolStripButton();
@@ -65,10 +61,6 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnDelivery,
             this.toolStripSeparator1,
-            this.btnAddNewWeighted,
-            this.btnAddNewPacked,
-            this.btnEdit,
-            this.btnDelete,
             this.btnStoreOK,
             this.toolStripSeparator2,
             this.btnSave,
@@ -93,44 +85,6 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnAddNewWeighted
-            // 
-            this.btnAddNewWeighted.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAddNewWeighted.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewWeighted.Image")));
-            this.btnAddNewWeighted.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAddNewWeighted.Name = "btnAddNewPacked";
-            this.btnAddNewWeighted.Size = new System.Drawing.Size(23, 22);
-            this.btnAddNewWeighted.Text = "Новий запакований продукт";
-            this.btnAddNewWeighted.Click += new System.EventHandler(this.btnAddNewPacked_Click);
-            // 
-            // btnAddNewPacked
-            // 
-            this.btnAddNewPacked.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAddNewPacked.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewPacked.Image")));
-            this.btnAddNewPacked.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAddNewPacked.Name = "btnAddNewWeighted";
-            this.btnAddNewPacked.Size = new System.Drawing.Size(23, 22);
-            this.btnAddNewPacked.Text = "Новий продукт на вагу";
-            this.btnAddNewPacked.Click += new System.EventHandler(this.btnAddNewWeighted_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(23, 22);
-            this.btnEdit.Text = "Змінити продукт";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(23, 22);
-            this.btnDelete.Text = "Видалити продукт";
             // 
             // btnStoreOK
             // 
@@ -198,15 +152,11 @@
         private System.Windows.Forms.DataGridView gvStore;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnDelivery;
-        private System.Windows.Forms.ToolStripButton btnAddNewWeighted;
-        private System.Windows.Forms.ToolStripButton btnEdit;
-        private System.Windows.Forms.ToolStripButton btnDelete;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton btnSave;
         private System.Windows.Forms.ToolStripButton btnOpenSaved;
         private System.Windows.Forms.ToolStripButton btnStoreOK;
         private System.Windows.Forms.VScrollBar vScrollBar1;
-        private System.Windows.Forms.ToolStripButton btnAddNewPacked;
     }
 }

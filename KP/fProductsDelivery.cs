@@ -18,10 +18,8 @@ namespace KP
 
         }
 
-       
         private void fProductsDelivery_Load(object sender, EventArgs e)
         {
-
             gvDelivery.DataSource = bindSrDelivery;
 
             gvDelivery.AutoGenerateColumns = false;
@@ -43,6 +41,28 @@ namespace KP
 
             
 
+        }
+
+        private void btnAddNewWeighted_Click(object sender, EventArgs e)
+        {
+            Product product = new Weighted();
+    fAddProduct fa = new fAddProduct(product);
+    if (fa.ShowDialog() == DialogResult.OK)
+    {
+        // Додавання продукту через BindingSource
+        bindSrDelivery.Add(product);
+    }
+        }
+
+        private void btnAddNewPacked_Click(object sender, EventArgs e)
+        {
+            Product product = new Packed();
+            fAddProduct fa = new fAddProduct(product);
+            if (fa.ShowDialog() == DialogResult.OK)
+            {
+                // Додавання продукту через BindingSource
+                bindSrDelivery.Add(product);
+            }
         }
     }
 }

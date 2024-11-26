@@ -74,19 +74,5 @@ namespace KP
             gvStore.Columns.Add(column);
         }
 
-        
-        private void btnAddNewWeighted_Click(object sender, EventArgs e)
-        {
-            Product product = new Weighted();
-            fAddProduct fa = new fAddProduct(product);
-            fa.ShowDialog();
-        }
-
-        private void btnAddNewPacked_Click(object sender, EventArgs e)
-        {
-            Product product = new Packed();
-            fAddProduct fa = new fAddProduct(product);
-            fa.ShowDialog();
-        }
     }
 }

@@ -45,6 +45,7 @@ namespace KP
                 weighted.CostPerAmountOfUnits = int.Parse(tbAddWorP.Text);
             }
             DialogResult = DialogResult.OK;
+            
         }
 
         private void btnNewProductCancel_Click(object sender, EventArgs e)
