@@ -8,10 +8,10 @@ namespace KP
 {
     public class Weighted : Product
     {
-        public double CostPerAmountOfUnits { get; set; }
+        public override double CostPerAmountOfUnits { get; set; }
 
-        public Weighted(string id, string name, double cost, double price, int amount, DateTime lastDelivery, double costPer100gram, double costPerAmountOfUnits )
-            : base(id, name, cost, price, amount, lastDelivery )
+        public Weighted(string id, string name, double cost, double price, int amount, DateTime lastDelivery, double costPerAmountOfUnits)
+            : base(id, name, cost, price, amount, lastDelivery)
         {
 
             CostPerAmountOfUnits = costPerAmountOfUnits;

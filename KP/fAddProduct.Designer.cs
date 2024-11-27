@@ -37,10 +37,15 @@
             this.tbAddID = new System.Windows.Forms.TextBox();
             this.tbAddName = new System.Windows.Forms.TextBox();
             this.tbAddCost = new System.Windows.Forms.TextBox();
-            this.tbAddWorP = new System.Windows.Forms.TextBox();
+            this.tbAddPackSize = new System.Windows.Forms.TextBox();
             this.lbRecomended = new System.Windows.Forms.Label();
             this.tbAddPrice = new System.Windows.Forms.TextBox();
             this.lbAddPrice = new System.Windows.Forms.Label();
+            this.lbCheckBox = new System.Windows.Forms.Label();
+            this.cbPacked = new System.Windows.Forms.CheckBox();
+            this.cbWeighted = new System.Windows.Forms.CheckBox();
+            this.lbGram = new System.Windows.Forms.Label();
+            this.tbAddCostPerAmountOfUnits = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnNewProductCancel
@@ -93,7 +98,7 @@
             // lbWorP
             // 
             this.lbWorP.AutoSize = true;
-            this.lbWorP.Location = new System.Drawing.Point(12, 110);
+            this.lbWorP.Location = new System.Drawing.Point(12, 162);
             this.lbWorP.Name = "lbWorP";
             this.lbWorP.Size = new System.Drawing.Size(28, 13);
             this.lbWorP.TabIndex = 7;
@@ -105,6 +110,7 @@
             this.tbAddID.Name = "tbAddID";
             this.tbAddID.Size = new System.Drawing.Size(100, 20);
             this.tbAddID.TabIndex = 8;
+            this.tbAddID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbAddID.TextChanged += new System.EventHandler(this.tbAddID_TextChanged);
             // 
             // tbAddName
@@ -113,6 +119,7 @@
             this.tbAddName.Name = "tbAddName";
             this.tbAddName.Size = new System.Drawing.Size(100, 20);
             this.tbAddName.TabIndex = 9;
+            this.tbAddName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbAddCost
             // 
@@ -120,13 +127,14 @@
             this.tbAddCost.Name = "tbAddCost";
             this.tbAddCost.Size = new System.Drawing.Size(100, 20);
             this.tbAddCost.TabIndex = 10;
+            this.tbAddCost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbAddWorP
+            // tbAddPackSize
             // 
-            this.tbAddWorP.Location = new System.Drawing.Point(158, 110);
-            this.tbAddWorP.Name = "tbAddWorP";
-            this.tbAddWorP.Size = new System.Drawing.Size(100, 20);
-            this.tbAddWorP.TabIndex = 12;
+            this.tbAddPackSize.Location = new System.Drawing.Point(158, 159);
+            this.tbAddPackSize.Name = "tbAddPackSize";
+            this.tbAddPackSize.Size = new System.Drawing.Size(100, 20);
+            this.tbAddPackSize.TabIndex = 12;
             // 
             // lbRecomended
             // 
@@ -143,6 +151,7 @@
             this.tbAddPrice.Name = "tbAddPrice";
             this.tbAddPrice.Size = new System.Drawing.Size(100, 20);
             this.tbAddPrice.TabIndex = 16;
+            this.tbAddPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbAddPrice
             // 
@@ -153,15 +162,70 @@
             this.lbAddPrice.TabIndex = 15;
             this.lbAddPrice.Text = "Закупівельна ціна(грн)";
             // 
+            // lbCheckBox
+            // 
+            this.lbCheckBox.AutoSize = true;
+            this.lbCheckBox.Location = new System.Drawing.Point(10, 114);
+            this.lbCheckBox.Name = "lbCheckBox";
+            this.lbCheckBox.Size = new System.Drawing.Size(122, 13);
+            this.lbCheckBox.TabIndex = 17;
+            this.lbCheckBox.Text = "Вибиріть тип продукту:";
+            // 
+            // cbPacked
+            // 
+            this.cbPacked.AutoSize = true;
+            this.cbPacked.Location = new System.Drawing.Point(158, 114);
+            this.cbPacked.Name = "cbPacked";
+            this.cbPacked.Size = new System.Drawing.Size(93, 17);
+            this.cbPacked.TabIndex = 18;
+            this.cbPacked.Text = "Запакований";
+            this.cbPacked.UseVisualStyleBackColor = true;
+            this.cbPacked.CheckedChanged += new System.EventHandler(this.cbPacked_CheckedChanged);
+            // 
+            // cbWeighted
+            // 
+            this.cbWeighted.AutoSize = true;
+            this.cbWeighted.Location = new System.Drawing.Point(267, 114);
+            this.cbWeighted.Name = "cbWeighted";
+            this.cbWeighted.Size = new System.Drawing.Size(65, 17);
+            this.cbWeighted.TabIndex = 19;
+            this.cbWeighted.Text = "На вагу";
+            this.cbWeighted.UseVisualStyleBackColor = true;
+            this.cbWeighted.CheckedChanged += new System.EventHandler(this.cbWeighted_CheckedChanged);
+            // 
+            // lbGram
+            // 
+            this.lbGram.AutoSize = true;
+            this.lbGram.Location = new System.Drawing.Point(155, 162);
+            this.lbGram.Name = "lbGram";
+            this.lbGram.Size = new System.Drawing.Size(32, 13);
+            this.lbGram.TabIndex = 20;
+            this.lbGram.Text = "грам";
+            this.lbGram.Visible = false;
+            // 
+            // tbAddCostPerAmountOfUnits
+            // 
+            this.tbAddCostPerAmountOfUnits.Location = new System.Drawing.Point(53, 159);
+            this.tbAddCostPerAmountOfUnits.Name = "tbAddCostPerAmountOfUnits";
+            this.tbAddCostPerAmountOfUnits.Size = new System.Drawing.Size(99, 20);
+            this.tbAddCostPerAmountOfUnits.TabIndex = 21;
+            this.tbAddCostPerAmountOfUnits.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbAddCostPerAmountOfUnits.Visible = false;
+            // 
             // fAddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(478, 223);
+            this.Controls.Add(this.tbAddCostPerAmountOfUnits);
+            this.Controls.Add(this.lbGram);
+            this.Controls.Add(this.cbWeighted);
+            this.Controls.Add(this.cbPacked);
+            this.Controls.Add(this.lbCheckBox);
             this.Controls.Add(this.tbAddPrice);
             this.Controls.Add(this.lbAddPrice);
             this.Controls.Add(this.lbRecomended);
-            this.Controls.Add(this.tbAddWorP);
+            this.Controls.Add(this.tbAddPackSize);
             this.Controls.Add(this.tbAddCost);
             this.Controls.Add(this.tbAddName);
             this.Controls.Add(this.tbAddID);
@@ -190,9 +254,14 @@
         private System.Windows.Forms.TextBox tbAddID;
         private System.Windows.Forms.TextBox tbAddName;
         private System.Windows.Forms.TextBox tbAddCost;
-        private System.Windows.Forms.TextBox tbAddWorP;
+        private System.Windows.Forms.TextBox tbAddPackSize;
         private System.Windows.Forms.Label lbRecomended;
         private System.Windows.Forms.TextBox tbAddPrice;
         private System.Windows.Forms.Label lbAddPrice;
+        private System.Windows.Forms.Label lbCheckBox;
+        private System.Windows.Forms.CheckBox cbPacked;
+        private System.Windows.Forms.CheckBox cbWeighted;
+        private System.Windows.Forms.Label lbGram;
+        private System.Windows.Forms.TextBox tbAddCostPerAmountOfUnits;
     }
 }

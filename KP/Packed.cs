@@ -8,10 +8,10 @@ namespace KP
 {
     public class Packed : Product
     {
-       public string PackSize { get; set; } //Розмір упаковки
+        public override string PackSize { get; set; } = "N/A";
 
-        public Packed(string id, string name, double cost,double price, int amount, DateTime lastDelivery, string packSize)
-            :base(id, name, cost,price, amount , lastDelivery )
+        public Packed(string id, string name, double cost, double price, int amount, DateTime lastDelivery, string packSize)
+            : base(id, name, cost, price, amount, lastDelivery)
         {
             PackSize = packSize;
         }

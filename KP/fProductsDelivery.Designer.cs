@@ -34,10 +34,10 @@
             this.bindSrDelivery = new System.Windows.Forms.BindingSource(this.components);
             this.btnDeliver = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnAddNewPacked = new System.Windows.Forms.ToolStripButton();
-            this.btnAddNewWeighted = new System.Windows.Forms.ToolStripButton();
+            this.btnAddNewProduct = new System.Windows.Forms.ToolStripButton();
             this.btnEdit = new System.Windows.Forms.ToolStripButton();
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
+            this.btnDeliveryOK = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.gvDelivery)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindSrDelivery)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -62,39 +62,31 @@
             this.btnDeliver.TabIndex = 1;
             this.btnDeliver.Text = "Поставити";
             this.btnDeliver.UseVisualStyleBackColor = true;
+            this.btnDeliver.Click += new System.EventHandler(this.btnDeliver_Click);
             // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnAddNewPacked,
-            this.btnAddNewWeighted,
+            this.btnAddNewProduct,
             this.btnEdit,
-            this.btnDelete});
+            this.btnDelete,
+            this.btnDeliveryOK});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(451, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // btnAddNewPacked
+            // btnAddNewProduct
             // 
-            this.btnAddNewPacked.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAddNewPacked.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewPacked.Image")));
-            this.btnAddNewPacked.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAddNewPacked.Name = "btnAddNewPacked";
-            this.btnAddNewPacked.Size = new System.Drawing.Size(23, 22);
-            this.btnAddNewPacked.Text = "Новий запакований продукт";
-            this.btnAddNewPacked.Click += new System.EventHandler(this.btnAddNewPacked_Click);
-            // 
-            // btnAddNewWeighted
-            // 
-            this.btnAddNewWeighted.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAddNewWeighted.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewWeighted.Image")));
-            this.btnAddNewWeighted.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAddNewWeighted.Name = "btnAddNewWeighted";
-            this.btnAddNewWeighted.Size = new System.Drawing.Size(23, 22);
-            this.btnAddNewWeighted.Text = "Новий продукт на вагу";
-            this.btnAddNewWeighted.Click += new System.EventHandler(this.btnAddNewWeighted_Click);
+            this.btnAddNewProduct.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAddNewProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewProduct.Image")));
+            this.btnAddNewProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAddNewProduct.Name = "btnAddNewProduct";
+            this.btnAddNewProduct.Size = new System.Drawing.Size(23, 22);
+            this.btnAddNewProduct.Text = "Новий запакований продукт";
+            this.btnAddNewProduct.ToolTipText = "Новий продукт";
+            this.btnAddNewProduct.Click += new System.EventHandler(this.btnAddNewProduct_Click);
             // 
             // btnEdit
             // 
@@ -113,6 +105,16 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(23, 22);
             this.btnDelete.Text = "Видалити продукт";
+            // 
+            // btnDeliveryOK
+            // 
+            this.btnDeliveryOK.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnDeliveryOK.Image = ((System.Drawing.Image)(resources.GetObject("btnDeliveryOK.Image")));
+            this.btnDeliveryOK.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDeliveryOK.Name = "btnDeliveryOK";
+            this.btnDeliveryOK.Size = new System.Drawing.Size(23, 22);
+            this.btnDeliveryOK.Text = "Ok";
+            this.btnDeliveryOK.Click += new System.EventHandler(this.btnDeliveryOK_Click);
             // 
             // fProductsDelivery
             // 
@@ -141,9 +143,9 @@
         private System.Windows.Forms.BindingSource bindSrDelivery;
         private System.Windows.Forms.Button btnDeliver;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton btnAddNewPacked;
-        private System.Windows.Forms.ToolStripButton btnAddNewWeighted;
+        private System.Windows.Forms.ToolStripButton btnAddNewProduct;
         private System.Windows.Forms.ToolStripButton btnEdit;
         private System.Windows.Forms.ToolStripButton btnDelete;
+        private System.Windows.Forms.ToolStripButton btnDeliveryOK;
     }
 }

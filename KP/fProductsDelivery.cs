@@ -12,17 +12,17 @@ namespace KP
 {
     public partial class fProductsDelivery : Form
     {
-     
+        public List<Product> Products { get; set; }
+        public int recID;
         public fProductsDelivery()
         {
             InitializeComponent();
-
+            Products = new List<Product>();
+            gvDelivery.DataSource = Products;
         }
 
         private void fProductsDelivery_Load(object sender, EventArgs e)
         {
-            gvDelivery.DataSource = bindSrDelivery;
-
             gvDelivery.AutoGenerateColumns = false;
 
             DataGridViewColumn column = new DataGridViewTextBoxColumn();
@@ -39,33 +39,30 @@ namespace KP
             column.DataPropertyName = "Amount";
             column.Name = "Кількість";
             gvDelivery.Columns.Add(column);
-
-            
-
         }
 
-        private void btnAddNewWeighted_Click(object sender, EventArgs e)
+        private void btnAddNewProduct_Click(object sender, EventArgs e)
         {
-            Product product = new Weighted();
-            using (fAddProduct fa = new fAddProduct(product))
+            recID = gvDelivery.RowCount + 1;
+            var fa = new fAddProduct(recID);
+            fa.ProductAdded += (s, product) =>
             {
-                if (fa.ShowDialog() == DialogResult.OK)
-                {
-                    bindSrDelivery.Add(product);
-                }
-            }
+                Products.Add(product);
+                gvDelivery.DataSource = null;
+                gvDelivery.DataSource = Products;
+
+            };
+            fa.Show();
         }
 
-        private void btnAddNewPacked_Click(object sender, EventArgs e)
+        private void btnDeliveryOK_Click(object sender, EventArgs e)
         {
-            Product product = new Packed();
-            using (fAddProduct fa = new fAddProduct(product))
-            {
-                if (fa.ShowDialog() == DialogResult.OK)
-                {
-                    bindSrDelivery.Add(product);
-                }
-            }
+            DialogResult = DialogResult.OK;
+        }
+
+        private void btnDeliver_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
