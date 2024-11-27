@@ -12,21 +12,21 @@ namespace KP
         //Властивості
         public string ID { get; set; }
         public string Name { get; set; }
+        public int Amount { get; set; }
         public double Cost { get; set; }
         public double Price { get; set; }
-        public int Amount { get; set; }
         public DateTime LastDelivery { get; set; }
         public virtual string PackSize { get; set; }
         public virtual double CostPerAmountOfUnits { get; set; }
 
         //Конструктор
-        public Product(string id, string name, double cost, double price, int amount, DateTime lastDelivery)
+        public Product(string id, string name,int amount, double cost, double price,  DateTime lastDelivery)
         {
             ID = id;
             Name = name;
+            Amount = amount;
             Cost = cost;
             Price = price;
-            Amount = amount;
             LastDelivery = lastDelivery;
         }
         public Product() { }

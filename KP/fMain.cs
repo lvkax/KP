@@ -32,8 +32,8 @@ namespace KP
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
-           fProductsInStock fs = new fProductsInStock();
-           fs.ShowDialog();
+           var fps = new fProductsInStock();
+           fps.ShowDialog();
         }
         private void btnCardPaying_Click(object sender, EventArgs e)
         {

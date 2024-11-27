@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,33 +13,24 @@ namespace KP
 {
     public partial class fProductsDelivery : Form
     {
-        public List<Product> Products { get; set; }
+        public BindingList<Product> PossProducts { get; set; }
+        public BindingList<Product> AvailProducts { get; set; }
         public int recID;
-        public fProductsDelivery()
+        public fProductsDelivery(List<Product> AvailProducts)
         {
+            
             InitializeComponent();
-            Products = new List<Product>();
-            gvDelivery.DataSource = Products;
+            PossProducts = new BindingList<Product>();
+            gvDelivery.DataSource = PossProducts;
         }
+
 
         private void fProductsDelivery_Load(object sender, EventArgs e)
         {
             gvDelivery.AutoGenerateColumns = false;
+            gvDelivery.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            gvDelivery.MultiSelect = true;
 
-            DataGridViewColumn column = new DataGridViewTextBoxColumn();
-            column.DataPropertyName = "Id";
-            column.Name = "ID";
-            gvDelivery.Columns.Add(column);
-
-            column = new DataGridViewTextBoxColumn();
-            column.DataPropertyName = "Name";
-            column.Name = "Ім'я";
-            gvDelivery.Columns.Add(column);
-
-            column = new DataGridViewTextBoxColumn();
-            column.DataPropertyName = "Amount";
-            column.Name = "Кількість";
-            gvDelivery.Columns.Add(column);
         }
 
         private void btnAddNewProduct_Click(object sender, EventArgs e)
@@ -47,9 +39,9 @@ namespace KP
             var fa = new fAddProduct(recID);
             fa.ProductAdded += (s, product) =>
             {
-                Products.Add(product);
+                PossProducts.Add(product);
                 gvDelivery.DataSource = null;
-                gvDelivery.DataSource = Products;
+                gvDelivery.DataSource = PossProducts;
 
             };
             fa.Show();
@@ -60,9 +52,21 @@ namespace KP
             DialogResult = DialogResult.OK;
         }
 
+        private void gvDelivery_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (gvDelivery.CurrentRow?.DataBoundItem is Product selectedItem)
+            {
+                
+                selectedItem = gvDelivery.CurrentRow?.DataBoundItem as Product;
+                AvailProducts.Add(selectedItem);
+            }
+        }
         private void btnDeliver_Click(object sender, EventArgs e)
         {
+            if (gvDelivery.CurrentRow?.DataBoundItem is Product selectedItem)
+            {
 
+            }
         }
     }
 }

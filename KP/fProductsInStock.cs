@@ -11,18 +11,21 @@ using System.Windows.Forms;
 
 namespace KP
 {
+
     public partial class fProductsInStock : Form
     {
-
+        public List<Product> AvailableProducts { get; set; } 
         public fProductsInStock()
         {
             InitializeComponent();
+            AvailableProducts = new List<Product>();
+            gvStore.DataSource = AvailableProducts;
         }
 
         private void btnDelivery_Click(object sender, EventArgs e)
         {
-            fProductsDelivery fd = new fProductsDelivery();
-            fd.ShowDialog();
+            var fpd = new fProductsDelivery(AvailableProducts);
+            fpd.ShowDialog();
         }
 
         private void btnStoreOK_Click(object sender, EventArgs e)
@@ -47,6 +50,7 @@ namespace KP
             column = new DataGridViewTextBoxColumn();
             column.DataPropertyName = "Amount";
             column.Name = "Кількість";
+         
             gvStore.Columns.Add(column);
 
             column = new DataGridViewTextBoxColumn();

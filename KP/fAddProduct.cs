@@ -39,13 +39,13 @@ namespace KP
             {
 
                 costPerAmountOfUnits = 1;
-                newProduct = new Packed(id, name, cost, price, amount, lastDelivery, packSize);
+                newProduct = new Packed(id, name, amount,cost, price,  lastDelivery, packSize);
             }
             else if (cbWeighted.Checked)
             {
                 packSize = "N/A";
                 costPerAmountOfUnits = Double.Parse(tbAddCostPerAmountOfUnits.Text);
-                newProduct = new Weighted(id, name, cost, price, amount, lastDelivery, costPerAmountOfUnits);
+                newProduct = new Weighted(id, name, amount,cost, price,  lastDelivery, costPerAmountOfUnits);
 
             }
 

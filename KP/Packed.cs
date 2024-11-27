@@ -10,8 +10,8 @@ namespace KP
     {
         public override string PackSize { get; set; } = "N/A";
 
-        public Packed(string id, string name, double cost, double price, int amount, DateTime lastDelivery, string packSize)
-            : base(id, name, cost, price, amount, lastDelivery)
+        public Packed(string id, string name,int amount, double cost, double price,  DateTime lastDelivery, string packSize)
+            : base(id, name,amount, cost, price,  lastDelivery)
         {
             PackSize = packSize;
         }

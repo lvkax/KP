@@ -28,37 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fProductsDelivery));
             this.gvDelivery = new System.Windows.Forms.DataGridView();
-            this.bindSrDelivery = new System.Windows.Forms.BindingSource(this.components);
             this.btnDeliver = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAddNewProduct = new System.Windows.Forms.ToolStripButton();
             this.btnEdit = new System.Windows.Forms.ToolStripButton();
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.btnDeliveryOK = new System.Windows.Forms.ToolStripButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lbAmount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvDelivery)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindSrDelivery)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gvDelivery
             // 
-            this.gvDelivery.AutoGenerateColumns = false;
+            this.gvDelivery.AllowUserToAddRows = false;
+            this.gvDelivery.AllowUserToDeleteRows = false;
             this.gvDelivery.BackgroundColor = System.Drawing.Color.White;
             this.gvDelivery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvDelivery.DataSource = this.bindSrDelivery;
+            this.gvDelivery.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.gvDelivery.Location = new System.Drawing.Point(0, 28);
             this.gvDelivery.Name = "gvDelivery";
-            this.gvDelivery.Size = new System.Drawing.Size(351, 337);
+            this.gvDelivery.Size = new System.Drawing.Size(307, 337);
             this.gvDelivery.TabIndex = 0;
             // 
             // btnDeliver
             // 
-            this.btnDeliver.Location = new System.Drawing.Point(357, 341);
+            this.btnDeliver.Location = new System.Drawing.Point(339, 341);
             this.btnDeliver.Name = "btnDeliver";
-            this.btnDeliver.Size = new System.Drawing.Size(75, 23);
+            this.btnDeliver.Size = new System.Drawing.Size(100, 23);
             this.btnDeliver.TabIndex = 1;
             this.btnDeliver.Text = "Поставити";
             this.btnDeliver.UseVisualStyleBackColor = true;
@@ -116,12 +116,30 @@
             this.btnDeliveryOK.Text = "Ok";
             this.btnDeliveryOK.Click += new System.EventHandler(this.btnDeliveryOK_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(339, 315);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 3;
+            // 
+            // lbAmount
+            // 
+            this.lbAmount.AutoSize = true;
+            this.lbAmount.Location = new System.Drawing.Point(346, 299);
+            this.lbAmount.Name = "lbAmount";
+            this.lbAmount.Size = new System.Drawing.Size(93, 13);
+            this.lbAmount.TabIndex = 4;
+            this.lbAmount.Text = "Введіть кількість";
+            // 
             // fProductsDelivery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(451, 376);
+            this.Controls.Add(this.lbAmount);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnDeliver);
             this.Controls.Add(this.gvDelivery);
@@ -129,7 +147,6 @@
             this.Text = "Поставка продуктів";
             this.Load += new System.EventHandler(this.fProductsDelivery_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvDelivery)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindSrDelivery)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -140,12 +157,13 @@
         #endregion
 
         private System.Windows.Forms.DataGridView gvDelivery;
-        private System.Windows.Forms.BindingSource bindSrDelivery;
         private System.Windows.Forms.Button btnDeliver;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnAddNewProduct;
         private System.Windows.Forms.ToolStripButton btnEdit;
         private System.Windows.Forms.ToolStripButton btnDelete;
         private System.Windows.Forms.ToolStripButton btnDeliveryOK;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lbAmount;
     }
 }
