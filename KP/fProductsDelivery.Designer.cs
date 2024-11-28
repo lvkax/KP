@@ -36,6 +36,9 @@
             this.btnEdit = new System.Windows.Forms.ToolStripButton();
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.btnDeliveryOK = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnDeliverySave = new System.Windows.Forms.ToolStripButton();
+            this.btnOpenSavedDelivery = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.gvDelivery)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +71,10 @@
             this.btnAddNewProduct,
             this.btnEdit,
             this.btnDelete,
-            this.btnDeliveryOK});
+            this.btnDeliveryOK,
+            this.toolStripSeparator1,
+            this.btnDeliverySave,
+            this.btnOpenSavedDelivery});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(451, 25);
@@ -114,6 +120,30 @@
             this.btnDeliveryOK.Text = "Ok";
             this.btnDeliveryOK.Click += new System.EventHandler(this.btnDeliveryOK_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnDeliverySave
+            // 
+            this.btnDeliverySave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnDeliverySave.Image = ((System.Drawing.Image)(resources.GetObject("btnDeliverySave.Image")));
+            this.btnDeliverySave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDeliverySave.Name = "btnDeliverySave";
+            this.btnDeliverySave.Size = new System.Drawing.Size(23, 22);
+            this.btnDeliverySave.Text = "Зберегти наявність";
+            this.btnDeliverySave.Click += new System.EventHandler(this.btnDeliverySave_Click);
+            // 
+            // btnOpenSavedDelivery
+            // 
+            this.btnOpenSavedDelivery.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnOpenSavedDelivery.Image = ((System.Drawing.Image)(resources.GetObject("btnOpenSavedDelivery.Image")));
+            this.btnOpenSavedDelivery.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnOpenSavedDelivery.Name = "btnOpenSavedDelivery";
+            this.btnOpenSavedDelivery.Size = new System.Drawing.Size(23, 22);
+            this.btnOpenSavedDelivery.Text = "Відкрити збережену наявність";
+            // 
             // fProductsDelivery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,5 +173,8 @@
         private System.Windows.Forms.ToolStripButton btnEdit;
         private System.Windows.Forms.ToolStripButton btnDelete;
         private System.Windows.Forms.ToolStripButton btnDeliveryOK;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton btnDeliverySave;
+        private System.Windows.Forms.ToolStripButton btnOpenSavedDelivery;
     }
 }

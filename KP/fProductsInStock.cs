@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace KP
 {
@@ -43,6 +45,8 @@ namespace KP
 
         private void fProductsInStock_Load(object sender, EventArgs e)
         {
+            LoadStockData("stock.json");
+
             gvStore.AutoGenerateColumns = false;
 
             DataGridViewColumn column = new DataGridViewTextBoxColumn();
@@ -94,9 +98,31 @@ namespace KP
 
         }
 
+        public void SaveStockData(string filePath)
+        {
+            string json = JsonConvert.SerializeObject(AvailableProducts, Formatting.Indented);
+            File.WriteAllText(filePath, json);
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
+            SaveStockData("stock.json");
+            MessageBox.Show("База склада успішно збережена!");
+        }
 
+        public void LoadStockData(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                string json = File.ReadAllText(filePath);
+                AvailableProducts = JsonConvert.DeserializeObject<List<Product>>(json) ?? new List<Product>();
+                gvStore.DataSource = null;
+                gvStore.DataSource = AvailableProducts; // Обновить таблицу
+            }
+            else
+            {
+                MessageBox.Show("Файл бази наявності не знайдений!");
+            }
         }
 
         private void btnOpenSaved_Click(object sender, EventArgs e)

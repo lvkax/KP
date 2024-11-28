@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace KP
 {
@@ -28,6 +30,8 @@ namespace KP
 
         private void fProductsDelivery_Load(object sender, EventArgs e)
         {
+            LoadDeliveryData("delivery.json");
+
             gvDelivery.AutoGenerateColumns = false;
 
             gvDelivery.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -63,6 +67,8 @@ namespace KP
         }
         private void btnDeliver_Click(object sender, EventArgs e)
         {
+            SaveDeliveryData("delivery.json");
+            MessageBox.Show("База доставки успішно збережена!");
             foreach (var product in AvailableProducts.ToList())
             {
 
@@ -76,5 +82,32 @@ namespace KP
             }
             DialogResult = DialogResult.OK;
         }
+
+        public void SaveDeliveryData(string filePath)
+        {
+            string json = JsonConvert.SerializeObject(PossProducts, Formatting.Indented);
+            File.WriteAllText(filePath, json);
+        }
+        private void btnDeliverySave_Click(object sender, EventArgs e)
+        {
+            SaveDeliveryData("delivery.json");
+            MessageBox.Show("База доставки успішно збережена!");
+        }
+
+        public void LoadDeliveryData(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                string json = File.ReadAllText(filePath);
+                PossProducts = JsonConvert.DeserializeObject<BindingList<Product>>(json) ?? new BindingList<Product>();
+                gvDelivery.DataSource = null;
+                gvDelivery.DataSource = PossProducts; // Обновить таблицу
+            }
+            else
+            {
+                MessageBox.Show("Файл бази доставки не знайдений!");
+            }
+        }
+
     }
 }
