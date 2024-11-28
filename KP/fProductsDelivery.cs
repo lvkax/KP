@@ -14,13 +14,14 @@ namespace KP
     public partial class fProductsDelivery : Form
     {
         public BindingList<Product> PossProducts { get; set; }
-        public BindingList<Product> AvailProducts { get; set; }
+        public List<Product> AvailableProducts { get; set; }
+
         public int recID;
-        public fProductsDelivery(List<Product> AvailProducts)
+        public fProductsDelivery(List<Product> availableProducts)
         {
-            
             InitializeComponent();
             PossProducts = new BindingList<Product>();
+            AvailableProducts = availableProducts; 
             gvDelivery.DataSource = PossProducts;
         }
 
@@ -28,6 +29,7 @@ namespace KP
         private void fProductsDelivery_Load(object sender, EventArgs e)
         {
             gvDelivery.AutoGenerateColumns = false;
+
             gvDelivery.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             gvDelivery.MultiSelect = true;
 
@@ -40,6 +42,7 @@ namespace KP
             fa.ProductAdded += (s, product) =>
             {
                 PossProducts.Add(product);
+                AvailableProducts.Add(product);
                 gvDelivery.DataSource = null;
                 gvDelivery.DataSource = PossProducts;
 
@@ -56,17 +59,22 @@ namespace KP
         {
             if (gvDelivery.CurrentRow?.DataBoundItem is Product selectedItem)
             {
-                
-                selectedItem = gvDelivery.CurrentRow?.DataBoundItem as Product;
-                AvailProducts.Add(selectedItem);
             }
         }
         private void btnDeliver_Click(object sender, EventArgs e)
         {
-            if (gvDelivery.CurrentRow?.DataBoundItem is Product selectedItem)
+            foreach (var product in AvailableProducts.ToList())
             {
 
+                product.GetUnit();
+                product.LastDelivery = DateTime.Now;
+                product.CalculateTotalValue();
+                if (product.Amount == 0)
+                {
+                    AvailableProducts.Remove(product);
+                }
             }
+            DialogResult = DialogResult.OK;
         }
     }
 }

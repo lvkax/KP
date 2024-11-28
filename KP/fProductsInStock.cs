@@ -15,17 +15,24 @@ namespace KP
     public partial class fProductsInStock : Form
     {
         public List<Product> AvailableProducts { get; set; } 
-        public fProductsInStock()
+        public fProductsInStock(List<Product> wantedProducts)
         {
             InitializeComponent();
             AvailableProducts = new List<Product>();
             gvStore.DataSource = AvailableProducts;
+            AvailableProducts = wantedProducts;
+
         }
 
         private void btnDelivery_Click(object sender, EventArgs e)
         {
             var fpd = new fProductsDelivery(AvailableProducts);
             fpd.ShowDialog();
+            if(fpd.DialogResult == DialogResult.OK)
+{
+                gvStore.DataSource = null;
+                gvStore.DataSource = AvailableProducts;
+            }
         }
 
         private void btnStoreOK_Click(object sender, EventArgs e)
@@ -50,7 +57,6 @@ namespace KP
             column = new DataGridViewTextBoxColumn();
             column.DataPropertyName = "Amount";
             column.Name = "Кількість";
-         
             gvStore.Columns.Add(column);
 
             column = new DataGridViewTextBoxColumn();
@@ -64,19 +70,21 @@ namespace KP
             gvStore.Columns.Add(column);
 
             column = new DataGridViewTextBoxColumn();
-            column.DataPropertyName = "Unit";
-            column.Name = "Од.виміру";
+            column.DataPropertyName = "PackSize";
+            column.Name = "Розмір";
+            gvStore.Columns.Add(column);
+
+            column = new DataGridViewTextBoxColumn();
+            column.DataPropertyName = "Price";
+            column.Name = "Закупівельна ціна";
             gvStore.Columns.Add(column);
 
             column = new DataGridViewTextBoxColumn();
             column.DataPropertyName = "LastDelivery";
             column.Name = "Остання поставка";
+            column.Width = 120;
             gvStore.Columns.Add(column);
 
-            column = new DataGridViewTextBoxColumn();
-            column.DataPropertyName = "TotalCost";
-            column.Name = "Загальна ціна";
-            gvStore.Columns.Add(column);
         }
 
     }

@@ -37,8 +37,7 @@ namespace KP
 
             if (cbPacked.Checked)
             {
-
-                costPerAmountOfUnits = 1;
+                
                 newProduct = new Packed(id, name, amount,cost, price,  lastDelivery, packSize);
             }
             else if (cbWeighted.Checked)
@@ -46,7 +45,6 @@ namespace KP
                 packSize = "N/A";
                 costPerAmountOfUnits = Double.Parse(tbAddCostPerAmountOfUnits.Text);
                 newProduct = new Weighted(id, name, amount,cost, price,  lastDelivery, costPerAmountOfUnits);
-
             }
 
             if (newProduct != null)

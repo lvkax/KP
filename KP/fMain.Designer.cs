@@ -32,12 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMain));
             this.tsMain = new System.Windows.Forms.ToolStrip();
             this.btnProducts = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnExit = new System.Windows.Forms.ToolStripButton();
             this.btnCardPaying = new System.Windows.Forms.Button();
             this.lbBag = new System.Windows.Forms.Label();
             this.tbTotalCost = new System.Windows.Forms.TextBox();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.lbPaying = new System.Windows.Forms.Label();
             this.gvCheck = new System.Windows.Forms.DataGridView();
+            this.bindSrCheck = new System.Windows.Forms.BindingSource(this.components);
             this.tbID = new System.Windows.Forms.TextBox();
             this.tb = new System.Windows.Forms.TextBox();
             this.tbAmount = new System.Windows.Forms.TextBox();
@@ -45,9 +47,7 @@
             this.lbAmount = new System.Windows.Forms.Label();
             this.btnAddtoCheck = new System.Windows.Forms.Button();
             this.btnCashPaying = new System.Windows.Forms.Button();
-            this.bindSrCheck = new System.Windows.Forms.BindingSource(this.components);
             this.bindSrAvailable = new System.Windows.Forms.BindingSource(this.components);
-            this.btnExit = new System.Windows.Forms.ToolStripButton();
             this.btnDiscount = new System.Windows.Forms.Button();
             this.tsMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvCheck)).BeginInit();
@@ -77,6 +77,21 @@
             this.btnProducts.Text = "Переглянути наявність";
             this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnExit
+            // 
+            this.btnExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(23, 22);
+            this.btnExit.Text = "Завершити зміну";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // btnCardPaying
             // 
             this.btnCardPaying.BackColor = System.Drawing.Color.GreenYellow;
@@ -99,7 +114,6 @@
             this.lbBag.Size = new System.Drawing.Size(63, 16);
             this.lbBag.TabIndex = 2;
             this.lbBag.Text = "Корзина";
-            this.lbBag.Click += new System.EventHandler(this.label1_Click);
             // 
             // tbTotalCost
             // 
@@ -108,11 +122,6 @@
             this.tbTotalCost.ReadOnly = true;
             this.tbTotalCost.Size = new System.Drawing.Size(105, 20);
             this.tbTotalCost.TabIndex = 3;
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // lbPaying
             // 
@@ -135,6 +144,7 @@
             this.gvCheck.ReadOnly = true;
             this.gvCheck.Size = new System.Drawing.Size(420, 305);
             this.gvCheck.TabIndex = 6;
+            this.gvCheck.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gvCheck_RowsAdded);
             // 
             // tbID
             // 
@@ -185,6 +195,7 @@
             this.btnAddtoCheck.TabIndex = 12;
             this.btnAddtoCheck.Text = "Додати в корзину";
             this.btnAddtoCheck.UseVisualStyleBackColor = false;
+            this.btnAddtoCheck.Click += new System.EventHandler(this.btnAddtoCheck_Click);
             // 
             // btnCashPaying
             // 
@@ -197,16 +208,6 @@
             this.btnCashPaying.Text = "Готівкою";
             this.btnCashPaying.UseVisualStyleBackColor = false;
             this.btnCashPaying.Click += new System.EventHandler(this.btnCashPaying_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(23, 22);
-            this.btnExit.Text = "Завершити зміну";
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnDiscount
             // 

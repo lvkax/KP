@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fProductsInStock));
             this.gvStore = new System.Windows.Forms.DataGridView();
-            this.bindSrStore = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnDelivery = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -39,21 +38,21 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnSave = new System.Windows.Forms.ToolStripButton();
             this.btnOpenSaved = new System.Windows.Forms.ToolStripButton();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            this.bindSrSrore = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gvStore)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindSrStore)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindSrSrore)).BeginInit();
             this.SuspendLayout();
             // 
             // gvStore
             // 
             this.gvStore.AutoGenerateColumns = false;
             this.gvStore.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvStore.DataSource = this.bindSrStore;
+            this.gvStore.DataSource = this.bindSrSrore;
             this.gvStore.Location = new System.Drawing.Point(0, 25);
             this.gvStore.Name = "gvStore";
             this.gvStore.ReadOnly = true;
-            this.gvStore.Size = new System.Drawing.Size(840, 425);
+            this.gvStore.Size = new System.Drawing.Size(862, 425);
             this.gvStore.TabIndex = 0;
             // 
             // toolStrip1
@@ -67,7 +66,7 @@
             this.btnOpenSaved});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(860, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(862, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -119,36 +118,26 @@
             this.btnOpenSaved.Size = new System.Drawing.Size(23, 22);
             this.btnOpenSaved.Text = "Відкрити збережену наявність";
             // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(843, 20);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(15, 430);
-            this.vScrollBar1.TabIndex = 2;
-            // 
             // fProductsInStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(860, 450);
-            this.Controls.Add(this.vScrollBar1);
+            this.ClientSize = new System.Drawing.Size(862, 450);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.gvStore);
             this.Name = "fProductsInStock";
             this.Text = "Продукти в наявності";
             this.Load += new System.EventHandler(this.fProductsInStock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvStore)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindSrStore)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindSrSrore)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.BindingSource bindSrStore;
         private System.Windows.Forms.DataGridView gvStore;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnDelivery;
@@ -157,6 +146,6 @@
         private System.Windows.Forms.ToolStripButton btnSave;
         private System.Windows.Forms.ToolStripButton btnOpenSaved;
         private System.Windows.Forms.ToolStripButton btnStoreOK;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
+        private System.Windows.Forms.BindingSource bindSrSrore;
     }
 }

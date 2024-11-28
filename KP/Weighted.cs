@@ -26,7 +26,7 @@ namespace KP
 
         public override double CalculateTotalValue()
         {
-            return Cost / CostPerAmountOfUnits * Amount;
+            return (Amount / CostPerAmountOfUnits) * Cost;
         }
 
         public override bool NeedsDiscount(DateTime currentDate)

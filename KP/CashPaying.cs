@@ -12,20 +12,16 @@ namespace KP
 {
     public partial class CashPaying : Form
     {
-        public CashPaying()
+        double TotalCost = 0;
+        public CashPaying(double totalCost)
         {
             InitializeComponent();
+            TotalCost = totalCost;
         }
 
         private void btnCashYes_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnCashNo_Click(object sender, EventArgs e)
-        {
-
-            DialogResult = DialogResult.Cancel;
         }
 
         private void btnCashCancel_Click_1(object sender, EventArgs e)
@@ -35,7 +31,7 @@ namespace KP
 
         private void CashPaying_Load(object sender, EventArgs e)
         {
-            tbCashPaying.Text = "3000";
+            tbCashPaying.Text = TotalCost.ToString();
         }
 
         private void tbGived_TextChanged(object sender, EventArgs e) 
@@ -45,7 +41,7 @@ namespace KP
                 double topay = Double.Parse(tbCashPaying.Text);
                 double gived = Double.Parse(tbGived.Text);
                 double rest = gived - topay;
-                tbRest.Text = rest.ToString() + "  ₴";
+                tbRest.Text = rest.ToString() + " ₴";
             }
             
         }

@@ -36,8 +36,6 @@
             this.btnEdit = new System.Windows.Forms.ToolStripButton();
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.btnDeliveryOK = new System.Windows.Forms.ToolStripButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lbAmount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvDelivery)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +49,7 @@
             this.gvDelivery.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.gvDelivery.Location = new System.Drawing.Point(0, 28);
             this.gvDelivery.Name = "gvDelivery";
-            this.gvDelivery.Size = new System.Drawing.Size(307, 337);
+            this.gvDelivery.Size = new System.Drawing.Size(333, 337);
             this.gvDelivery.TabIndex = 0;
             // 
             // btnDeliver
@@ -116,30 +114,12 @@
             this.btnDeliveryOK.Text = "Ok";
             this.btnDeliveryOK.Click += new System.EventHandler(this.btnDeliveryOK_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(339, 315);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
-            // 
-            // lbAmount
-            // 
-            this.lbAmount.AutoSize = true;
-            this.lbAmount.Location = new System.Drawing.Point(346, 299);
-            this.lbAmount.Name = "lbAmount";
-            this.lbAmount.Size = new System.Drawing.Size(93, 13);
-            this.lbAmount.TabIndex = 4;
-            this.lbAmount.Text = "Введіть кількість";
-            // 
             // fProductsDelivery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(451, 376);
-            this.Controls.Add(this.lbAmount);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnDeliver);
             this.Controls.Add(this.gvDelivery);
@@ -163,7 +143,5 @@
         private System.Windows.Forms.ToolStripButton btnEdit;
         private System.Windows.Forms.ToolStripButton btnDelete;
         private System.Windows.Forms.ToolStripButton btnDeliveryOK;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label lbAmount;
     }
 }
