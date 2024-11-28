@@ -21,7 +21,7 @@ namespace KP
 
         private void btnCashYes_Click(object sender, EventArgs e)
         {
-
+            DialogResult = DialogResult.OK;
         }
 
         private void btnCashCancel_Click_1(object sender, EventArgs e)

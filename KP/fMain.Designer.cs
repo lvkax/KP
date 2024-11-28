@@ -48,7 +48,8 @@
             this.btnAddtoCheck = new System.Windows.Forms.Button();
             this.btnCashPaying = new System.Windows.Forms.Button();
             this.bindSrAvailable = new System.Windows.Forms.BindingSource(this.components);
-            this.btnDiscount = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lbDiscount = new System.Windows.Forms.Label();
             this.tsMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindSrCheck)).BeginInit();
@@ -127,7 +128,7 @@
             // 
             this.lbPaying.AutoSize = true;
             this.lbPaying.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbPaying.Location = new System.Drawing.Point(540, 359);
+            this.lbPaying.Location = new System.Drawing.Point(540, 363);
             this.lbPaying.Name = "lbPaying";
             this.lbPaying.Size = new System.Drawing.Size(71, 15);
             this.lbPaying.TabIndex = 5;
@@ -209,17 +210,23 @@
             this.btnCashPaying.UseVisualStyleBackColor = false;
             this.btnCashPaying.Click += new System.EventHandler(this.btnCashPaying_Click);
             // 
-            // btnDiscount
+            // textBox1
             // 
-            this.btnDiscount.BackColor = System.Drawing.Color.GreenYellow;
-            this.btnDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnDiscount.Location = new System.Drawing.Point(134, 163);
-            this.btnDiscount.Name = "btnDiscount";
-            this.btnDiscount.Size = new System.Drawing.Size(133, 23);
-            this.btnDiscount.TabIndex = 14;
-            this.btnDiscount.Text = "Додати знижку";
-            this.btnDiscount.UseVisualStyleBackColor = false;
-            this.btnDiscount.Click += new System.EventHandler(this.btnDiscount_Click);
+            this.textBox1.Location = new System.Drawing.Point(432, 358);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(102, 20);
+            this.textBox1.TabIndex = 14;
+            // 
+            // lbDiscount
+            // 
+            this.lbDiscount.AutoSize = true;
+            this.lbDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbDiscount.Location = new System.Drawing.Point(372, 363);
+            this.lbDiscount.Name = "lbDiscount";
+            this.lbDiscount.Size = new System.Drawing.Size(54, 15);
+            this.lbDiscount.TabIndex = 15;
+            this.lbDiscount.Text = "Знижка:";
             // 
             // fMain
             // 
@@ -227,7 +234,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(734, 431);
-            this.Controls.Add(this.btnDiscount);
+            this.Controls.Add(this.lbDiscount);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnCashPaying);
             this.Controls.Add(this.btnAddtoCheck);
             this.Controls.Add(this.lbAmount);
@@ -275,7 +283,8 @@
         private System.Windows.Forms.Button btnAddtoCheck;
         private System.Windows.Forms.Button btnCashPaying;
         private System.Windows.Forms.ToolStripButton btnExit;
-        private System.Windows.Forms.Button btnDiscount;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lbDiscount;
     }
 }
 

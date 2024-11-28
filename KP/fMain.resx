@@ -907,6 +907,9 @@
   <metadata name="bindSrCheck.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>108, 17</value>
   </metadata>
+  <metadata name="bindSrCheck.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>108, 17</value>
+  </metadata>
   <metadata name="bindSrAvailable.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>228, 17</value>
   </metadata>
@@ -916,7 +919,7 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAt4AAAGvCAYAAABsAtKmAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAA/7JJREFUeF7svQdgHked/g+EQEjilsTplPTQ4YCQ5t7t9J7Q7jjggCv/+3HUgyQE
+        vQAADr0BR/uQrQAA/7JJREFUeF7svQdgHked/g+EQEjilsTplPTQ4YCQ5t7t9J7Q7jjggCv/+3HUgyQE
         CCUkENLde5V7SeImW1bvvctykeTebUlv//6f5zs777vvaiXLNXbOr/3RbJmdnZ3ynWdnZ2c/IN36xRyi
         EotF8NcSxtawLgex9xC87IxGZGMoINXRkFTEwlKOfWWgHMdVRCJSGY3GqYrFkqiORc8coohPEuLBu//M
         xJvGfvgd56Y2kqCG25zjKpH7pMJxu8J7zhPBxotxYZwakB+kEdSh3NWjrDUiDxXuC0exPyZ1jD/wCzM5

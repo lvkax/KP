@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fProductsInStock));
             this.gvStore = new System.Windows.Forms.DataGridView();
+            this.bindSrSrore = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnDelivery = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -38,10 +39,9 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnSave = new System.Windows.Forms.ToolStripButton();
             this.btnOpenSaved = new System.Windows.Forms.ToolStripButton();
-            this.bindSrSrore = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gvStore)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindSrSrore)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gvStore
@@ -108,6 +108,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(23, 22);
             this.btnSave.Text = "Зберегти наявність";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnOpenSaved
             // 
@@ -117,6 +118,7 @@
             this.btnOpenSaved.Name = "btnOpenSaved";
             this.btnOpenSaved.Size = new System.Drawing.Size(23, 22);
             this.btnOpenSaved.Text = "Відкрити збережену наявність";
+            this.btnOpenSaved.Click += new System.EventHandler(this.btnOpenSaved_Click);
             // 
             // fProductsInStock
             // 
@@ -129,9 +131,9 @@
             this.Text = "Продукти в наявності";
             this.Load += new System.EventHandler(this.fProductsInStock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvStore)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindSrSrore)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindSrSrore)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

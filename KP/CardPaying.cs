@@ -19,7 +19,7 @@ namespace KP
 
         private void btnCardYes_Click(object sender, EventArgs e)
         {
-
+            DialogResult = DialogResult.OK;
         }
 
         private void btnCardNo_Click(object sender, EventArgs e)

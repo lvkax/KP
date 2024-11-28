@@ -18,10 +18,9 @@ namespace KP
         public fProductsInStock(List<Product> wantedProducts)
         {
             InitializeComponent();
-            AvailableProducts = new List<Product>();
-            gvStore.DataSource = AvailableProducts;
+            
             AvailableProducts = wantedProducts;
-
+            gvStore.DataSource = AvailableProducts;
         }
 
         private void btnDelivery_Click(object sender, EventArgs e)
@@ -37,6 +36,8 @@ namespace KP
 
         private void btnStoreOK_Click(object sender, EventArgs e)
         {
+            gvStore.DataSource = null;
+            gvStore.DataSource = AvailableProducts;
             DialogResult = DialogResult.OK;
         }
 
@@ -85,7 +86,22 @@ namespace KP
             column.Width = 120;
             gvStore.Columns.Add(column);
 
+            column = new DataGridViewCheckBoxColumn();
+            column.DataPropertyName = "NeedsDiscount";
+            column.Name = "Потребує в знижці";
+            column.Width = 40;
+            gvStore.Columns.Add(column);
+
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOpenSaved_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
